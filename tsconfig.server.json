@@ -1,9 +1,9 @@
 {
-  "extends": "./tsconfig.json",
-  "include": ["server/**.ts"],
-  "compilerOptions": {
-    "outDir": "build/server",
-    "module": "commonjs",
-    "noEmit": false
-  }
+	"extends": "./tsconfig.json",
+	"include": ["server/**.ts"],
+	"compilerOptions": {
+		"outDir": "build/server",
+		"module": "commonjs",
+		"noEmit": false
+	}
 }
