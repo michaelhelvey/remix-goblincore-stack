@@ -3,3 +3,4 @@ build
 node_modules
 public
 .eslintrc.cjs
+vitest.config.cts

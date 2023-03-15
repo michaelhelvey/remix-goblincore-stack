@@ -9,20 +9,20 @@
 		"build:server": "tsc -p tsconfig.server.json",
 		"build:remix": "remix build",
 		"dev": "run-p \"dev:*\"",
-		"lint": "eslint . --ext .ts,.tsx,.js,.jsx --cache",
 		"dev:node": "cross-env NODE_ENV=development nodemon --require dotenv/config ./server/main.ts",
 		"dev:remix": "remix watch",
 		"start": "cross-env NODE_ENV=production node ./build/server/main.js",
+		"lint": "eslint . --ext .ts,.tsx,.js,.jsx --cache",
+		"test": "vitest",
+		"test:coverage": "vitest --coverage --run",
 		"typecheck": "tsc",
 		"clean": "rm -rf build public/build .cache",
 		"prepare": "husky install"
 	},
 	"lint-staged": {
-		"src/**/*.ts": "prettier --write",
+		"**/*.ts": "prettier --write",
 		"*.{js,jsx,ts,tsx}": "eslint --cache --fix",
-		"*.{ts,js,json}": "prettier --write",
-		"*.{ts,tsx,js,jsx}": "eslint --cache --fix",
-		"*.{js,css,md}": "prettier --write"
+		"*.{ts,js,json,css,md}": "prettier --write"
 	},
 	"prettier": {
 		"trailingComma": "es5",
