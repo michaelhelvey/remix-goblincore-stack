@@ -9,11 +9,27 @@
 		"build:server": "tsc -p tsconfig.server.json",
 		"build:remix": "remix build",
 		"dev": "run-p \"dev:*\"",
+		"lint": "eslint . --ext .ts,.tsx,.js,.jsx --cache",
 		"dev:node": "cross-env NODE_ENV=development nodemon --require dotenv/config ./server/main.ts",
 		"dev:remix": "remix watch",
 		"start": "cross-env NODE_ENV=production node ./build/server/main.js",
 		"typecheck": "tsc",
 		"clean": "rm -rf build public/build .cache"
+	},
+	"lint-staged": {
+		"src/**/*.ts": "prettier --write",
+		"*.{js,jsx,ts,tsx}": "eslint --cache --fix",
+		"*.{ts,js,json}": "prettier --write"
+	},
+	"prettier": {
+		"trailingComma": "es5",
+		"tabWidth": 4,
+		"semi": false,
+		"singleQuote": true,
+		"useTabs": true
+	},
+	"engines": {
+		"node": ">=18"
 	},
 	"dependencies": {
 		"@remix-run/node": "^1.14.3",
@@ -59,6 +75,7 @@
 		"eslint-plugin-testing-library": "^5.10.2",
 		"happy-dom": "^8.9.0",
 		"husky": "^8.0.3",
+		"lint-staged": "^13.2.0",
 		"nodemon": "^2.0.21",
 		"npm-run-all": "^4.1.5",
 		"prettier": "^2.8.4",
@@ -68,8 +85,5 @@
 		"vite": "^4.1.4",
 		"vite-tsconfig-paths": "^4.0.7",
 		"vitest": "^0.29.3"
-	},
-	"engines": {
-		"node": ">=18"
 	}
 }

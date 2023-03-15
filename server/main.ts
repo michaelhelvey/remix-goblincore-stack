@@ -1,7 +1,9 @@
+/* eslint-disable no-console */
+import { type ServerBuild } from '@remix-run/node'
 import Koa from 'koa'
+import logger from 'koa-logger'
 import serve from 'koa-static'
 import path from 'path'
-import logger from 'koa-logger'
 import { createRequestHandler } from 'remix-koa-adapter'
 
 const app = new Koa()
@@ -12,7 +14,8 @@ app.use(logger())
 app.use(serve('public'))
 
 const remixAppHandler = createRequestHandler({
-	build: require(BUILD_DIR),
+	// eslint-disable-next-line @typescript-eslint/no-var-requires
+	build: require(BUILD_DIR) as ServerBuild,
 	mode: process.env.NODE_ENV,
 })
 
