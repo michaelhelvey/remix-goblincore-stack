@@ -4,3 +4,4 @@ node_modules
 public
 .eslintrc.cjs
 vitest.config.cts
+tailwind.config.cjs

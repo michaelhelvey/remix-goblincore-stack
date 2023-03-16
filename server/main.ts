@@ -13,19 +13,23 @@ const BUILD_DIR = path.join(process.cwd(), 'build')
 app.use(logger())
 app.use(serve('public'))
 
-const remixAppHandler = createRequestHandler({
-	// eslint-disable-next-line @typescript-eslint/no-var-requires
-	build: require(BUILD_DIR) as ServerBuild,
-	mode: process.env.NODE_ENV,
-})
-
-if (process.env.NODE_ENV === 'development') {
-	app.use(async (ctx) => {
-		purgeRequireCache()
-		return remixAppHandler(ctx)
-	})
+if (process.env.NODE_ENV === 'production') {
+	app.use(
+		createRequestHandler({
+			// eslint-disable-next-line @typescript-eslint/no-var-requires
+			build: require(BUILD_DIR) as ServerBuild,
+			mode: process.env.NODE_ENV,
+		})
+	)
 } else {
-	app.use(remixAppHandler)
+	app.use((ctx) => {
+		purgeRequireCache()
+		return createRequestHandler({
+			// eslint-disable-next-line @typescript-eslint/no-var-requires
+			build: require(BUILD_DIR) as ServerBuild,
+			mode: process.env.NODE_ENV,
+		})(ctx)
+	})
 }
 
 const port = process.env.PORT ?? 3000
@@ -33,10 +37,8 @@ app.listen(port, () => {
 	console.log(`✅ App listening on port ${port}`)
 })
 
-/**
- * Purge require cache on request for "server side HMR"
- */
 function purgeRequireCache() {
+	// purge require cache on requests for "server side HMR"
 	for (const key in require.cache) {
 		if (key.startsWith(BUILD_DIR)) {
 			delete require.cache[key]
