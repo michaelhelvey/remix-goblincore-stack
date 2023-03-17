@@ -62,5 +62,16 @@ module.exports = {
 				...looseTsConfiguration,
 			},
 		},
+		{
+			// testing-library rules aren't smart enough to know that they do
+			// not apply to playwright tests
+			files: ['**/e2e/**'],
+			rules: Object.keys(
+				require('eslint-plugin-testing-library').rules
+			).reduce((table, rule) => {
+				table[`testing-library/${rule}`] = ['off']
+				return table
+			}, {}),
+		},
 	],
 }

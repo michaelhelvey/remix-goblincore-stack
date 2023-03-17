@@ -1,5 +1,9 @@
+import { Example } from '~/components/example'
+
 export default function IndexPage() {
 	return (
-		<div className="h-full w-full bg-slate-900 text-white">Yoooooooooo</div>
+		<div className="text-white bg-slate-900 h-full w-full">
+			<Example />
+		</div>
 	)
 }

@@ -16,6 +16,7 @@
 		"lint": "eslint . --ext .ts,.tsx,.js,.jsx --cache",
 		"test": "vitest",
 		"test:coverage": "vitest --coverage --run",
+		"test:e2e": "playwright test",
 		"typecheck": "tsc",
 		"clean": "rm -rf build public/build .cache",
 		"prepare": "husky install"
@@ -51,6 +52,7 @@
 		"zod": "^3.21.4"
 	},
 	"devDependencies": {
+		"@playwright/test": "^1.31.2",
 		"@remix-run/dev": "1.14.3",
 		"@remix-run/eslint-config": "^1.14.3",
 		"@remix-run/testing": "^1.14.3",
