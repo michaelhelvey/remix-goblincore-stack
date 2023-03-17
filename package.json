@@ -3,6 +3,7 @@
 	"author": "Michael Helvey",
 	"version": "1.0.0",
 	"private": true,
+	"license": "MIT",
 	"sideEffects": false,
 	"scripts": {
 		"build": "run-p \"build:*\"",
@@ -52,6 +53,7 @@
 	"devDependencies": {
 		"@remix-run/dev": "1.14.3",
 		"@remix-run/eslint-config": "^1.14.3",
+		"@remix-run/testing": "^1.14.3",
 		"@testing-library/dom": "^9.0.1",
 		"@testing-library/jest-dom": "^5.16.5",
 		"@testing-library/react": "^14.0.0",
