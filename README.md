@@ -37,5 +37,9 @@ This will start a local development server at `http://localhost:3000`
 
 ## Credits
 
--   Written by [Michael Helvey](https://michaelhelvey.dev)
+-   Maintained by [Michael Helvey](https://michaelhelvey.dev)
 -   Top image by [PixArt-alpha 1024px](https://github.com/PixArt-alpha/PixArt-alpha)
+
+## License
+
+MIT
