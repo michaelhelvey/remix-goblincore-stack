@@ -9,7 +9,7 @@ METRICS_PORT = "8081"
 PORT = "8080"
 
 [deploy]
-release_command = "tsx ./src/drizzle/migrate.ts"
+release_command = "npx tsx ./src/drizzle/migrate.ts"
 
 [experimental]
 allowed_public_ports = []
