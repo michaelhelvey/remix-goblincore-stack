@@ -2,7 +2,7 @@ import { z } from 'zod'
 
 const envConfigSchema = z.object({
 	DATABASE_URL: z.string().url(),
-	CLERK_PUBISHABLE_KEY: z.string(),
+	CLERK_PUBLISHABLE_KEY: z.string(),
 	CLERK_SECRET_KEY: z.string(),
 })
 

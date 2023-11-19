@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://michaelhelvey.dev" target="blank"><img src="./assets/goblincore_stack.png" width="200" alt="goblin coding in a dark cave" /></a>
+  <a href="https://michaelhelvey.dev" target="blank"><img src="./public/goblincore_stack.png" width="200" alt="goblin coding in a dark cave" /></a>
 </p>
 
 # remix-goblincore-stack
@@ -37,5 +37,9 @@ This will start a local development server at `http://localhost:3000`
 
 ## Credits
 
--   Written by [Michael Helvey](https://michaelhelvey.dev)
+-   Maintained by [Michael Helvey](https://michaelhelvey.dev)
 -   Top image by [PixArt-alpha 1024px](https://github.com/PixArt-alpha/PixArt-alpha)
+
+## License
+
+MIT
