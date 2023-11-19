@@ -5,10 +5,6 @@ kill_timeout = 5
 processes = []
 
 [env]
-CLERK_SIGN_IN_URL=/login
-CLERK_SIGN_UP_URL=/signup
-CLERK_AFTER_SIGN_IN_URL=/
-CLERK_AFTER_SIGN_UP_URL=/METRICS_PORT = "8081"
 PORT = "8080"
 
 [deploy]

@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://michaelhelvey.dev" target="blank"><img src="./assets/goblincore_stack.png" width="200" alt="goblin coding in a dark cave" /></a>
+  <a href="https://michaelhelvey.dev" target="blank"><img src="./public/goblincore_stack.png" width="200" alt="goblin coding in a dark cave" /></a>
 </p>
 
 # remix-goblincore-stack
