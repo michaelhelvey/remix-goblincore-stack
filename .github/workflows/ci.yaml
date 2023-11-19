@@ -32,12 +32,6 @@ jobs:
             - name: Build application
               run: pnpm build
 
-            - name: Archive build
-              uses: actions/upload-artifact@v3
-              with:
-                  name: build-${{ github.sha }}
-                  path: build
-
     lint:
         name: 👺 Lint
         runs-on: ubuntu-latest
@@ -148,7 +142,13 @@ jobs:
                   cache-dependency-path: './pnpm-lock.yaml'
 
             - name: Install dependencies
-              run: pnpm install --prod
+              run: pnpm install
+
+            - name: Build application
+              run: pnpm build
+
+            - name: Prune Dependencies
+              run: pnpm prune --prod
 
             - name: Read app name
               uses: SebRollen/toml-action@v1.0.2
@@ -159,11 +159,6 @@ jobs:
 
             - name: Setup Fly
               uses: superfly/flyctl-actions/setup-flyctl@v1.4
-
-            - uses: actions/download-artifact@v3
-              with:
-                  name: build-${{ github.sha }}
-                  path: build
 
             - name: Deploy to Production
               run:
